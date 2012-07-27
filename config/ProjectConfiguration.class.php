@@ -25,7 +25,7 @@ class ProjectConfiguration extends sfProjectConfiguration
   **/
   public function configureDoctrine(Doctrine_Manager $manager)
   {
-    $manager->setAttribute(Doctrine::ATTR_QUERY_CACHE, new Doctrine_Cache_Apc());
+    // $manager->setAttribute(Doctrine::ATTR_QUERY_CACHE, new Doctrine_Cache_Apc());
   }
 
   public function configureMailer(sfEvent $event)
