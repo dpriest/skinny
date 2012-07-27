@@ -13,9 +13,25 @@ Skinny is a symfony application. You can clone its repository by doing
   
   git clone git://github.com/nacmartin/skinny.git
 
-and then configure your database with:
+and then congfigure a virtual hosts in apache:
 
-  vim config/databases.yml
+	<VirtualHost *:80>
+	    ServerName check.com
+	    DocumentRoot "/var/www/html/skinny/web"
+	    DirectoryIndex index.php
+	    <Directory "/var/www/html/skinny/web">
+	        AllowOverride All 
+	        Allow from All 
+	    </Directory>
+	</VirtualHost>
+
+configure your database with:
+
+	php symfony configure:database "mysql:host=localhost;dbname=jobeet" root mYsEcret
+
+import the database struct with following command:
+
+	php symfony doctrine:build --all
 
 After that, you can proceed as usual with symfony.
 
@@ -32,4 +48,3 @@ Postscript
 ----------
 
 In case you are curious, Skinny is a character of Breaking Bad (I name projects after BB characters).
-
