@@ -23,6 +23,11 @@ and then congfigure a virtual hosts in apache:
 	        AllowOverride All 
 	        Allow from All 
 	    </Directory>
+	    Alias /sf "/var/www/library/symfony/data/web/sf"
+	    <Directory "/var/www/library/symfony/data/web/sf">
+	        AllowOverride All 
+	        Allow from All 
+	    </Directory>
 	</VirtualHost>
 
 configure your database with:
