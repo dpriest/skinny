@@ -630,6 +630,10 @@ ul.listoflists{
   margin-top: 20px;
 }
 
+ul.listoflists li{
+  width: 480px;
+}
+
 ul.listoflists .shortdesc a{
   color: #aaa;
   font-size: 100%;

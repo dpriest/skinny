@@ -114,10 +114,14 @@ class listActions extends sfActions
   public function executeDelete(sfWebRequest $request)
   {
 
-    $this->forward404Unless($skinny_list = Doctrine::getTable('SkinnyList')->find(array($request->getParameter('id'))), sprintf('Object skinny_list does not exist (%s).', $request->getParameter('id')));
+    $this->forward404Unless($skinny_list = Doctrine::getTable('SkinnyList')->find(array($request->getParameter('id'))), sprintf('待办事项 (%s)不存在', $request->getParameter('id')));
     $skinny_list->delete();
-
-    $this->redirect('list/index');
+    //delete from ajax
+    if ($request->isMethod('POST')) {
+        return sfView::NONE;
+    } else {
+        $this->redirect('list/index');
+    }
   }
 
   public function executeSort($request)

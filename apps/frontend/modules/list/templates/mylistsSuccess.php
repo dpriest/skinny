@@ -10,3 +10,22 @@
   </div>
 <?php endif?>
 
+<script type="text/javascript">
+  $('.icon-delete').live('click',function(){
+    var agree=confirm("你确定要删除这条事项？");
+    if (!agree) return;
+    item_id = $(this).attr('id');
+    var r = $.ajax({
+      type: 'POST',
+      url: '/list/delete/'+item_id,
+      async: false,
+      error: function(XMLHttpRequest, textStatus, errorThrown) {
+          alert('网络连接出错。请稍后再试！');
+        },
+      success: function(data){
+        $('#'+item_id).parent().remove();
+      }
+    }).responseText;
+    return r;
+  });
+</script>
