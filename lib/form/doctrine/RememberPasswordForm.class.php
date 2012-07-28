@@ -14,7 +14,7 @@ class RememberPasswordForm extends BasesfGuardUserForm
 
     // helps
     $this->widgetSchema->setHelps(array(
-      'email'     => 'Enter your email, so we can send you further instructions to change your password.',
+      'email'     => '输入你的邮箱，我们会将密码发送过去',
     ));
 
     // validators

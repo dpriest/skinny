@@ -1,4 +1,4 @@
-<div id="unregistered" style="display:none" class="flash_notice">Unregistered users cannot save their progress. <?php echo link_to('Register, it\'s free!', '@sf_guard_signin')?></div>
+<div id="unregistered" style="display:none" class="flash_notice">未注册用户没有保存事项的功能。 <?php echo link_to('Register, it\'s free!', '@sf_guard_signin')?></div>
 <div class="title_head">
 <h1><?php echo $list->name?></h1></div>
 <div id="description"><?php echo $list->get('descriptionHtml', ESC_RAW)?></div>
@@ -15,10 +15,10 @@
 <?php endif?>
 
 <div id="foot-show">
-<?php echo link_to('Print', "list/print?id=$list->id")?>
+<?php echo link_to('打印', "list/print?id=$list->id")?>
 <?php if($owner):?>
-  <?php echo link_to('Edit', 'list/update?id='.$list->id)?>
-  <?php echo link_to('Delete', 'list/delete?id='.$list->id, 'confirm=Are you sure?')?>
+  <?php echo link_to('编辑', 'list/update?id='.$list->id)?>
+  <?php echo link_to('删除', 'list/delete?id='.$list->id, 'confirm=你确定要删除？')?>
 <?php endif?>
 
 <?php if ($owner):?>
@@ -32,7 +32,7 @@ $(function() {
       url: "<?php echo url_for('list/sort')?>",
       data: { 'sortarr' : $.toJSON(result) },
       error: function(XMLHttpRequest, textStatus, errorThrown) {
-        alert('There is a problem with the connection. Please, retry in some time.');
+        alert('网络连接出错。请稍后再试！');
       }
     });
   });
@@ -49,7 +49,7 @@ $(function() {
         url: "<?php echo url_for('list/addSkinnyItem')?>",
         data: form.serialize()+'&id=<?php echo $list->id?>',
         error: function(XMLHttpRequest, textStatus, errorThrown) {
-          alert('There is a problem with the connection. Please, retry in some time.');
+          alert('网络连接出错。请稍后再试！');
         },
         success: function(data, textStatus, XMLHttpRequest){
           newit = $("#todo").append(data);
@@ -66,7 +66,7 @@ $(function() {
         data: form.serialize()+'&id=<?php echo $list->id?>'+
               '&item_id='+item_id,
         error: function(XMLHttpRequest, textStatus, errorThrown) {
-          alert('There is a problem with the connection. Please, retry in some time.');
+          alert('网络连接出错。请稍后再试！');
         },
         success: function(data, textStatus, XMLHttpRequest){
           $('#todo-'+item_id).replaceWith(data);
@@ -90,7 +90,7 @@ $(function() {
   });
 
   $('.icon-delete').live('click',function(){
-    var agree=confirm("Are you sure you want to delete this item?");
+    var agree=confirm("你确定要删除这条事项？");
     if (!agree) return;
     id = $(this).parent().parent().attr('id');
     item_id = id.substring(5);
@@ -99,7 +99,7 @@ $(function() {
       url: '<?php echo url_for('list/deleteSkinnyItem')."?id=$list->id"."&item_id="?>'+item_id,
       async: false,
       error: function(XMLHttpRequest, textStatus, errorThrown) {
-          alert('There is a problem with the connection. Please, retry in some time.');
+          alert('网络连接出错。请稍后再试！');
         },
       success: function(data){
         $('#'+id).remove();

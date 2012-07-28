@@ -40,7 +40,7 @@ class listActions extends sfActions
 
     //SEO
     $response = $this->getResponse();
-    $response->addMeta('description', 'Create lists quickly as detailed as you want');
+    $response->addMeta('简介', '快速新建事项并作详细简介');
     $response->setTitle('list & check');
 
   }
@@ -93,7 +93,7 @@ class listActions extends sfActions
       }
     }
     $response = $this->getResponse();
-    $response->setTitle('New list - list & check');
+    $response->setTitle('新建事项 - list & check');
   }
 
   public function executeUpdate(sfWebRequest $request)
@@ -108,7 +108,7 @@ class listActions extends sfActions
       }
     }
     $response = $this->getResponse();
-    $response->setTitle('Edit list - list & check');
+    $response->setTitle('编辑事项 - list & check');
   }
 
   public function executeDelete(sfWebRequest $request)
@@ -205,6 +205,6 @@ class listActions extends sfActions
 
     //SEO
     $response = $this->getResponse();
-    $response->setTitle('My lists - list & check');
+    $response->setTitle('我的事项 - list & check');
   }
 }

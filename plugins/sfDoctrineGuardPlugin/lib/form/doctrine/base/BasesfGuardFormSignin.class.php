@@ -16,9 +16,9 @@ class BasesfGuardFormSignin extends BaseForm
   public function setup()
   {
     $this->setWidgets(array(
-      'username' => new sfWidgetFormInputText(),
-      'password' => new sfWidgetFormInputPassword(array('type' => 'password')),
-      'remember' => new sfWidgetFormInputCheckbox(),
+      'username' => new sfWidgetFormInputText(array('label'=>'用户名')),
+      'password' => new sfWidgetFormInputPassword(array('type' => 'password', 'label'=>'密码')),
+      'remember' => new sfWidgetFormInputCheckbox(array('label'=>'记住密码')),
     ));
 
     $this->setValidators(array(

@@ -1,7 +1,7 @@
-Dear <?php echo $username?>, 
+尊敬的 <?php echo $username?>, 
 
-To continue the registration, please use the following link:
+要继续注册，请点击以下链接
 
 <?php echo url_for('@activate?token='.$token, true)?>
 
-Welcome to List&Check!
+欢迎来到 List&Check!

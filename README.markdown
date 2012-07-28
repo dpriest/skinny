@@ -20,8 +20,8 @@ and then congfigure a virtual hosts in apache:
 	    DocumentRoot "/var/www/html/skinny/web"
 	    DirectoryIndex index.php
 	    <Directory "/var/www/html/skinny/web">
-	        AllowOverride All 
-	        Allow from All 
+	        AllowOverride All
+	        Allow from All
 	    </Directory>
 	    Alias /sf "/var/www/library/symfony/data/web/sf"
 	    <Directory "/var/www/library/symfony/data/web/sf">
@@ -39,6 +39,14 @@ import the database struct with following command:
 	php symfony doctrine:build --all
 
 After that, you can proceed as usual with symfony.
+
+You can disable the apc module by commenting the code in config/ProjectConfiguration.class.php, line 28, defined in the configureDoctrine:
+
+	$manager->setAttribute(Doctrine::ATTR_QUERY_CACHE, new Doctrine_Cache_Apc());
+
+Create admin user by typing following command:
+
+	php symfony guard:create-user --is-super-admin wenhaoz100@gmail.com admin 123456
 
 License
 -------

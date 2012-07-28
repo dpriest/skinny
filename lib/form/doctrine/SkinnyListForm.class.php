@@ -19,16 +19,16 @@ class SkinnyListForm extends BaseSkinnyListForm
       'description'
     ));
     $this->widgetSchema->setLabels(array(
-      'name'    => 'List name',
-      'private'   => 'Is private?',
-      'description' => 'Description',
+      'name'    => '事项名称',
+      'private'   => '私有',
+      'description' => '描述',
     ));
 
     // helps
     $this->widgetSchema->setHelps(array(
-      'name'  => 'Give a title to the list.',
-      'description'     => 'You can write comments or a short description here',
-      'private' => 'Mark this if you don\'t want this list to be public'
+      'name'  => '给这个事项添加一个标题',
+      'description'     => '你可以在这里写一个简短的描述',
+      'private' => '如果你不想公开你的事项可以选中这个'
     ));
 
     $this->setDefault('private', false);

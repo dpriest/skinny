@@ -38,7 +38,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
     $activation->save();
 
     $message = Swift_Message::newInstance()
-        ->setSubject('Activate your List&Check account')
+        ->setSubject('激活你的帐号')
         ->setBody($this->getPartial('activationMail', array(
             'username' => $user->username,
             'token'    => $activation->hash
@@ -47,7 +47,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
         ->setTo(array($user->email => $user->username));
 
     $this->getMailer()->send($message);
-    $this->getUser()->setFlash('error', 'A confirmation mail has been sent to '. $user->email);
+    $this->getUser()->setFlash('error', '一封确认邮件已经发往'. $user->email);
     $this->redirect('@homepage');
   }
 
@@ -68,7 +68,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
         $user = $this->getUser()->getGuardUser();
         $user->setPassword($password);
         $user->save();
-        $this->getUser()->setFlash('notice', 'Password changed');
+        $this->getUser()->setFlash('notice', '密码修改成功');
         $this->redirect('@homepage');
 
       }
@@ -96,11 +96,11 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
           ->setTo(array($user->email => $user->username));
 
         $this->getMailer()->send($message);
-        $this->getUser()->setFlash('notice', 'A new password has been sent to '. $user->email);
+        $this->getUser()->setFlash('notice', '新密码已发送到'. $user->email);
         $this->redirect('@homepage');
 
       }else{
-        $this->getUser()->setFlash('error', 'There are no accounts registered with this email address');
+          $this->getUser()->setFlash('error', '邮箱地址无效');
       }
     }
   }
@@ -111,16 +111,16 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
     $activation = Doctrine::getTable('SkinnyActivation')->
       findOneByHash($key);
     if (!$activation){
-      $this->getUser()->setFlash('error', 'Invalid activation key');
+      $this->getUser()->setFlash('error', '激活码错误');
       return sfView::ERROR;
     }
 
     if (!$user = $activation->getUser()){
-      $this->getUser()->setFlash('error', 'Sorry, we could not find an user associated with this activation key');
+      $this->getUser()->setFlash('error', '对不起，找不到改激活码对应的用户');
       return sfView::ERROR;
     }
     if ($user->getIsActive()){
-      $this->getUser()->setFlash('error', 'This account is already active');
+      $this->getUser()->setFlash('error', '用户已经激活');
       return sfView::ERROR;
     }
 
@@ -128,7 +128,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
     $user->save();
     $activation->delete();
 
-    $this->getUser()->setFlash('notice', 'Your account has been activated. You can now log in using the username and password you provided at registration time.');
+    $this->getUser()->setFlash('notice', '你的账户已经成功激活。你现在可以正常登录本网站了');
     $this->redirect('@sf_guard_signin');
   }
 

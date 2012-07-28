@@ -24,12 +24,12 @@
       <ul>
       <?php if ($sf_user->isAuthenticated()): ?>
         <li><?php echo $sf_user->getGuardUser()->getUsername()?></li>
-        <li><?php echo link_to('my lists', '@my_lists')?></li> 
-        <li><?php echo link_to('sign out', '@sf_guard_signout')?></li> 
-        <li><?php echo link_to('change password', '@changePassword')?></li> 
+        <li><?php echo link_to('我的事项', '@my_lists')?></li> 
+        <li><?php echo link_to('注销', '@sf_guard_signout')?></li> 
+        <li><?php echo link_to('修改密码', '@changePassword')?></li> 
       <?php else: ?>
-        <li><?php echo link_to('sign up', '@register')?></li> 
-        <li><?php echo link_to('sign in', '@sf_guard_signin')?></li> 
+        <li><?php echo link_to('注册', '@register')?></li> 
+        <li><?php echo link_to('登录', '@sf_guard_signin')?></li> 
       <?php endif ?>
       </ul>
     </div>

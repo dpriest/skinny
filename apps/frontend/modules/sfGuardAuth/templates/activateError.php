@@ -1,4 +1,4 @@
-<h1>Bad news</h1>
-We encountered problem activating your account.
-If you wish us to send you again your activation mail.
+<h1>对不起</h1>
+在激活账户时遇到了一个错误
+需要再发送一次激活邮件 
 

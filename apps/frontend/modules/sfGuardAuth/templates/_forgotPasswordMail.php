@@ -1,10 +1,9 @@
-Dear <?php echo $username?>, 
+尊敬的 <?php echo $username?>, 
 
-Somebody (probably you) has requested a new password for his account in
-List&Check.
+您要求对你的帐号进行重置
 
-Your new password is "<?php echo $password ?>".
+你的新密码是 "<?php echo $password ?>".
 
-Now you should be able to sign in and change your password.
+现在您可以登录并修改您的密码了
 
-If you did not request a new password, just ignore this email and continue using your regular password.
+如果这份邮件不是您请求的，请忽略这封邮件
