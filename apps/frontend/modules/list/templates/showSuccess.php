@@ -1,4 +1,4 @@
-<div id="unregistered" style="display:none" class="flash_notice">未注册用户没有保存事项的功能。 <?php echo link_to('Register, it\'s free!', '@sf_guard_signin')?></div>
+<div id="unregistered" style="display:none" class="flash_notice">未注册用户无法使用完成事项的功能。 <?php echo link_to('马上注册', '@sf_guard_signin')?></div>
 <div class="title_head">
 <h1><?php echo $list->name?></h1></div>
 <div id="description"><?php echo $list->get('descriptionHtml', ESC_RAW)?></div>

@@ -1,3 +1,7 @@
+<?php 
+echo javascript_include_tag('form.js');
+echo stylesheet_tag('jquery-ui-1.7.1/ui-studio/jquery-ui-1.7.1.custom.css'); 
+?>
 <?php use_helper('I18N') ?>
 
 <form action="<?php echo url_for('@sf_guard_signin') ?>" method="post">
