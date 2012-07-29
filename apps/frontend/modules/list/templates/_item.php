@@ -7,7 +7,7 @@
       <div class="ui-icon ui-icon-arrowthick-2-n-s icon-drag"></div>
       <div class="ui-icon ui-icon-pencil icon-edit"></div>
     <?php endif?>
-    <div class="ui-widget-header item-header ui-helper-reset ui-corner-all ui-state-default <?php echo $hascontent ? 'hascontent' : '' ?><?php if(count($item->getSkinnyChecks())){echo 'ui-state-disabled';}?>">
+    <div class="ui-widget-header item-header ui-helper-reset ui-corner-all ui-state-default <?php echo $hascontent ? 'hascontent' : '' ?><?php if(count($item->getSkinnyChecks())){echo ' ui-state-disabled';}?>">
       <span class="title"><?php echo $item->name ?></span>
       <?php if ($hascontent):?>
         <div class="ui-icon ui-icon-triangle-1-e icon-show"></div>
@@ -39,7 +39,7 @@
       <div class="ui-widget-header ui-helper-reset ui-corner-all ui-state-default">
       <?php echo $form['name']->render()?><?php echo $form['id']->render()?></div>
       <div><?php echo $form['text']->render()?></div>
-      <input type="submit" value="Submit" />
+      <input type="submit" value="提交" />
     </form>
 
   </div>

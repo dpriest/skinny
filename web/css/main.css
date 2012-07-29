@@ -569,6 +569,7 @@ fieldset {
     font-size: 1.1em;
     clear:both;
     text-shadow: #888 0px 0px 10px;
+    word-break:break-all;
 }
 .title_head_center {
     margin-top: 50px;
@@ -643,6 +644,10 @@ ul.listoflists .shortdesc a{
 ul.listoflists a{
   color: #fff;
   font-size: 180%;
+}
+div.list {
+	word-break: break-all;
+	width: 400px;
 }
 
 a:hover {

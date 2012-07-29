@@ -2,7 +2,7 @@
 
 <?php if (count($lists) ):?>
   <div class="right"><?php echo link_to('新建事项', 'list/new', array('class'=>'pinkrounded'))?></div>
-  <?php include_partial('listoflists', array('lists' => $lists)) ?>
+  <?php include_partial('listoflists', array('lists' => $lists, 'action'=>'mylists')) ?>
 <?php else:?>
   <div class="msgcenter">
     <h2 style="margin-bottom:50px;">You haven't created any list yet</h2>
