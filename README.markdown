@@ -16,7 +16,7 @@ Skinny is a symfony application. You can clone its repository by doing
 and then congfigure a virtual hosts in apache:
 
 	<VirtualHost *:80>
-	    ServerName check.com
+	    ServerName www.quzuo.com
 	    DocumentRoot "/var/www/html/skinny/web"
 	    DirectoryIndex index.php
 	    <Directory "/var/www/html/skinny/web">
