@@ -1,0 +1,12 @@
+registerSuccess:
+  stylesheets:
+    - jquery-ui-1.7.1/ui-studio/jquery-ui-1.7.1.custom.css
+
+  javascripts:
+    - form.js
+changePasswordSuccess:
+  stylesheets:
+    - jquery-ui-1.7.1/ui-studio/jquery-ui-1.7.1.custom.css
+
+  javascripts:
+    - form.js
