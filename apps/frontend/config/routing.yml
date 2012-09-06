@@ -68,3 +68,7 @@ rememberPassword:
 my_lists:
   url:     /list/my-lists
   param:   { module: list, action: mylists }
+
+ajax_check_username:
+  url:   /user/checkusername
+  param: { module: sfGuardAuth, action: checkUsername }

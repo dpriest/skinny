@@ -132,4 +132,17 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
     $this->redirect('@sf_guard_signin');
   }
 
+    public function executeCheckUsername(sfWebRequest $request)
+    {
+        $username = Doctrine::getTable('sfGuardUser')->checkUsername($request->getParameter('username'));
+
+        if ($username != '')
+           $text = '用户名已存在!';
+        else if (strlen($request->getParameter('username')) >= 4)
+            $text = '<span style="color: #060">可以使用</span>';
+        else
+            $text = '';
+        return $this->renderText($text);
+    }
+
 }
