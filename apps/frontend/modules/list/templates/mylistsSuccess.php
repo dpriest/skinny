@@ -5,7 +5,7 @@
   <?php include_partial('listoflists', array('lists' => $lists, 'action'=>'mylists')) ?>
 <?php else:?>
   <div class="msgcenter">
-    <h2 style="margin-bottom:50px;">You haven't created any list yet</h2>
+    <h2 style="margin-bottom:50px;">你还没有可以做的事</h2>
     <h3><?php echo link_to('新建事项', 'list/new', array('class'=>'pinkrounded'))?></h3>
   </div>
 <?php endif?>
