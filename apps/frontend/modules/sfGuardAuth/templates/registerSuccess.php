@@ -1,9 +1,13 @@
 <div class="fiftypercent">
-  <form action="<?php echo url_for('@register') ?>" method="post">
+  <form action="<?php echo url_for('@register') ?>" method="post" id='register'>
     <fieldset>
       <legend><?php echo '注册' ?></legend>
       <?php echo $form->renderGlobalErrors() ?>
-      <?php echo $form['username']->renderRow(array(), '用户名') ?>
+      <div class="form-row">
+      <?php echo $form['username']->renderLabel('用户名'); ?>
+      <?php echo $form['username']->render(); ?>
+      </div>
+      <div id="status"></div>
       <?php echo $form['email']->renderRow(array(), '注册邮箱') ?>
       <?php echo $form['password']->renderRow(array(), '密码') ?>
       <?php echo $form['password2']->renderRow(array(), '再输入一次密码') ?>
@@ -25,3 +29,38 @@
   <?php echo button_to('登录', '@sf_guard_signin') ?>
   </form>
 </div>
+<script type="text/javascript">
+$(document).ready(function(){
+
+    $("#user_username").change(function() { 
+
+        var usr = $("#user_username").val();
+
+        if(usr.length >= 3)
+        {
+            $("#status").html('<img src="/images/loader.gif" align="absmiddle">&nbsp;正在验证用户名...');
+
+            $.ajax({
+                type: "POST",
+                url: "<?php echo url_for('ajax_check_username'); ?>",
+                data: "username="+ usr,  
+                success: function(msg){  
+
+                 $("#status").ajaxComplete(function(event, request, settings){
+                    $('#status').html(msg);
+                });
+
+             } 
+
+         }); 
+
+        }
+        else
+        {
+            $("#status").html('<font color="red">用户名至少要<strong>3</strong> 位</font>');
+        }
+
+    });
+
+});
+</script>

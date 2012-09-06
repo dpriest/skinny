@@ -21,7 +21,7 @@ class RegisterForm extends BasesfGuardUserForm
 
     // helps
     $this->widgetSchema->setHelps(array(
-      'username'  => '支持英文、数字、"_"或减号',
+      'username'  => '<div id="status"></div>支持英文、数字、"_"或减号',
       'email'     => '请输入有效的email地址，一封激活邮件会发到该email',
       'password'  => '密码不得少于6位',
       'password2' => '请再输入一次密码',
