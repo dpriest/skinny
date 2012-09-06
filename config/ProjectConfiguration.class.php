@@ -34,7 +34,8 @@ class ProjectConfiguration extends sfProjectConfiguration
       $sensible = sfYaml::load(sfConfig::get('sf_config_dir').'/sensible.yml');
       $mailer = $event->getSubject();
       $transport = $mailer->getRealtimeTransport();
-      $transport->setPassword($sensible['mailPassword']);
+      $transport->setUsername($sensible['mailUsername'])
+				->setPassword($sensible['mailPassword']);
       $mailer->setRealtimeTransport($transport);
   }
 }

@@ -4,7 +4,7 @@ Skinny
 Skinny is a simple application to build lists. 
 It is coded with [symfony](http://www.symfony-project.org/).
 
-You can see it online at [http://listandcheck.com](http://listandcheck.com).
+You can see it online at [http://http://www.quzuo.net/](http://http://www.quzuo.net/).
 
 Installation
 ------------
