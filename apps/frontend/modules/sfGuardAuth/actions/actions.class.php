@@ -43,7 +43,7 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
             'username' => $user->username,
             'token'    => $activation->hash
         )))
-        ->setFrom(array('quzuonoreply@gmail.com' => 'List & Check'))
+        ->setFrom(array('quzuol.net@gmail.com' => '趣做'))
         ->setTo(array($user->email => $user->username));
 
     $this->getMailer()->send($message);
